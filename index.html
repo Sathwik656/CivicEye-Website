@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Civic Eye</title>
+    <style>
+        /* General Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Orbitron:wght@400;700&family=IBM+Plex+Sans:wght@400;700&display=swap');
+        
+        body {
+            margin: 0;
+            font-family: 'IBM Plex Sans', sans-serif;
+            background-color: black;
+            color: white;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #222;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            font-family: 'Roboto Mono', monospace;
+        }
+        .navbar a:hover {
+            color: #ff5722;
+        }
+        .login-btn {
+            padding: 10px 20px;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .login-btn:hover {
+            background-color: #e64a19;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 72px;
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .hero p {
+            font-size: 24px;
+            margin: 20px 0;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        .hero .info {
+            margin-top: 40px;
+            font-size: 18px;
+            color: rgb(255, 255, 255);
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        /* Tracks Section Styles */
+        .tracks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 50px;
+            background: linear-gradient(to bottom, #333, #000);
+        }
+        .tracks .track {
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+        }
+        .track.orange {
+            background-color: #ff5722;
+            color: white;
+        }
+        .track.purple {
+            background-color: #9c27b0;
+            color: white;
+        }
+
+        /* Prepare Section Styles */
+        .prepare {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .prepare h2 {
+            font-size: 32px;
+            color: #9c27b0;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Services Section Styles */
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 50px;
+        }
+        .service-box {
+            width: 45%;
+            padding: 20px;
+            border: 2px solid white;
+            border-radius: 10px;
+            text-align: left;
+        }
+        .service-box h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .service-box p {
+            font-size: 16px;
+            color: gray;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">CIVIC EYE</div>
+        <div class="menu">
+            <a href="#home">HOME</a>
+            <a href="dashboard.html">DASHBOARD</a>
+        </div>
+        <a href="login.html" class="login-btn">LOGIN/SIGNUP</a>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Civic Eye</h1>
+        <p>Introduction</p>
+        <p class="info">CivicEye is an innovative software designed to detect and monitor traffic violations using home-based CCTV cameras.<br> It empowers users to identify common traffic rule violations, such as riding without helmets or triple riding, in real-time.<br> The software integrates seamlessly with user-provided CCTV systems, processes violations locally, and sends critical data and evidence to a centralized database. Users can access detailed violation logs and reports via a DASHBOARD</p>
+    </div>
+
+    <!-- Prepare Section -->
+    <div class="prepare">
+        <h2>FEATURES</h2>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services">
+        <div class="service-box">
+            <h3>EXPLORE NEW GROWTH OPPORTUNITIES</h3>
+            <p>This is the space to introduce the Services section. Briefly describe the types of services offered and highlight any special benefits or features.</p>
+        </div>
+        <div class="service-box">
+            <h3>REVOLUTIONIZE YOUR THINKING</h3>
+            <p>This is the space to introduce the Services section. Briefly describe the types of services offered and highlight any special benefits or features.</p>
+        </div>
+    </div>
+</body>
+</html>

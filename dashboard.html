@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard - Civic Eye</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Orbitron:wght@400;700&family=IBM+Plex+Sans:wght@400;700&display=swap');
+        
+        body {
+            margin: 0;
+            font-family: 'IBM Plex Sans', sans-serif;
+            background-color: black;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #222;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .navbar a:hover {
+            color: #ff5722;
+        }
+
+        .container {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 50px 0;
+        }
+
+        table, th, td {
+            border: 1px solid white;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        th {
+            background-color: #333;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        td img {
+            max-width: 100px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">CIVIC EYE</div>
+        <div class="menu">
+            <a href="index.html">HOME</a>
+            <a href="login.html">LOGIN/SIGNUP</a>
+        </div>
+    </div>
+
+    <!-- Dashboard Content -->
+    <div class="container">
+        <h1>Dashboard</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Violation Detected</th>
+                    <th>Image of Violation</th>
+                    <th>Date of Violation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>No Helmet</td>
+                    <td><img src="violation1.jpg" alt="No Helmet"></td>
+                    <td>16 February 2025</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
