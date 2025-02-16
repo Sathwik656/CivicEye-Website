@@ -21,6 +21,16 @@
             padding: 20px;
             background-color: #222;
         }
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-left img {
+            width: 65px;
+            height: 50px;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
         .navbar a {
             color: white;
             text-decoration: none;
@@ -131,7 +141,9 @@
 <body>
     <!-- Navbar -->
     <div class="navbar">
-        <div class="logo">CIVIC EYE</div>
+        <div class="navbar-left">
+            <img src="placeholder.png" alt="Logo">
+        </div>
         <div class="menu">
             <a href="#home">HOME</a>
             <a href="dashboard.html">DASHBOARD</a>
