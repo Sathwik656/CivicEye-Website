@@ -5,31 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
     <style>
+        /* General Page Styles */
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: black;
+            font-family: 'Arial', sans-serif;
+            background-color: #0d0221; /* Dark Purple */
             color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
+
+        /* Container Styling */
         .container {
+            background: linear-gradient(135deg, #220066, #5e17eb); /* Purple gradient */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(94, 23, 235, 0.3);
+            width: 400px;
             text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
+
         h1 {
-            color: #ff5722;
+            color: #e4c1f9; /* Light Purple */
+            margin-bottom: 20px;
+            font-family: 'Orbitron', sans-serif;
         }
-        p {
-            color: gray;
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-family: 'IBM Plex Sans', sans-serif;
+            outline: none;
+            transition: 0.3s ease;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        input:focus {
+            border: 2px solid #ff00ff;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Button Styling */
+        button {
+            background: #7b2cbf; /* Purple */
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background: #9a32cd;
+            box-shadow: 0px 4px 10px rgba(122, 0, 255, 0.4);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Login/Signup Page</h1>
-        <p>Placeholder for login/signup functionality.</p>
+        <h1>Signup</h1>
+        <form action="signup.php" method="POST">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="text" name="phone" placeholder="Phone Number" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="text" name="address" placeholder="Address" required>
+            <input type="text" name="city" placeholder="City" required>
+            <input type="text" name="pincode" placeholder="Pincode" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Signup</button>
+        </form>
     </div>
 </body>
 </html>
