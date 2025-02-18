@@ -10,11 +10,12 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #0d0221; /* Dark Purple */
+            background-color: #0d0221;
             color: white;
             display: flex;
-            flex-direction: column; /* Ensures navbar is positioned above content */
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
         }
 
@@ -26,23 +27,17 @@
             align-items: center;
             padding: 15px 50px;
             background-color: #222;
-            position: fixed; /* Ensures it stays on top */
+            position: fixed;
             top: 0;
             left: 0;
             height: 60px;
             z-index: 1000;
         }
 
-        .navbar-left {
-            display: flex;
-            align-items: center;
-        }
-
         .navbar-left img {
             width: 50px;
             height: 50px;
             border-radius: 5px;
-            margin-right: 15px;
         }
 
         .navbar a {
@@ -50,19 +45,13 @@
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
-            font-family: 'Roboto Mono', monospace;
         }
 
         .navbar a:hover {
             color: #ff5722;
         }
 
-        .auth-buttons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .login-btn {
+        .auth-buttons .login-btn {
             padding: 10px 20px;
             background-color: #8300fe;
             color: white;
@@ -70,12 +59,10 @@
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
-            text-decoration: none;
-            font-family: 'Orbitron', sans-serif;
             transition: background 0.3s ease;
         }
 
-        .login-btn:hover {
+        .auth-buttons .login-btn:hover {
             background-color: #6a00d3;
         }
 
@@ -88,13 +75,12 @@
             width: 400px;
             text-align: center;
             border: 2px solid rgba(255, 255, 255, 0.2);
-            margin-top: 80px; /* Adds spacing below navbar */
+            margin-top: 100px;
         }
 
         h1 {
             color: #e4c1f9;
             margin-bottom: 20px;
-            font-family: 'Orbitron', sans-serif;
         }
 
         /* Form Styling */
@@ -105,14 +91,13 @@
         }
 
         input {
-            width: 100%;
+            width: calc(100% - 24px);
             padding: 12px;
             border: none;
             border-radius: 8px;
             font-size: 16px;
             background: rgba(255, 255, 255, 0.1);
             color: white;
-            font-family: 'IBM Plex Sans', sans-serif;
             outline: none;
             transition: 0.3s ease;
         }
@@ -135,7 +120,6 @@
             border-radius: 8px;
             cursor: pointer;
             font-size: 18px;
-            font-family: 'Orbitron', sans-serif;
             text-transform: uppercase;
             transition: 0.3s ease;
         }
@@ -151,7 +135,7 @@
     <!-- Navbar -->
     <div class="navbar">
         <div class="navbar-left">
-            <a href="index.html"><img src="placeholder.png" alt="Logo"> </a>
+            <a href="index.html"><img src="placeholder.png" alt="Logo"></a>
         </div>
         <div class="menu">
             <a href="index.html">HOME</a>
