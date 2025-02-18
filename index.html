@@ -202,6 +202,111 @@
                 /* Full width for better readability on mobile */
             }
         }
+
+        /* Software Requirements Section Styles */
+        .software-requirements {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            margin: 50px auto;
+            width: 60%;
+            border: 2px solid #ff5722;
+            border-radius: 10px;
+            text-align: left;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        .software-requirements h2 {
+            font-size: 28px;
+            color: #ff5722;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .software-requirements ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .software-requirements ul li {
+            font-size: 18px;
+            padding: 10px;
+            border-left: 4px solid #ff5722;
+            background-color: rgba(255, 255, 255, 0.07);
+            margin-bottom: 10px;
+            border-radius: 5px;
+            padding-left: 15px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .software-requirements {
+                width: 90%;
+            }
+        }
+
+
+
+        /* Footer Styles */
+        footer {
+            background-color: #222;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            width: 30%;
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            font-size: 22px;
+            color: #ff5722;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .footer-section p {
+            font-size: 16px;
+            color: white;
+            font-family: 'IBM Plex Sans', sans-serif;
+            line-height: 1.5;
+        }
+
+        .footer-section a {
+            display: block;
+            color: #8300fe;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .footer-section a:hover {
+            color: #ff5722;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-section {
+                width: 100%;
+            }
+        }
+    </style>
+
     </style>
 </head>
 
@@ -209,7 +314,7 @@
     <!-- Navbar -->
     <div class="navbar">
         <div class="navbar-left">
-            <img src="placeholder.png" alt="Logo">
+            <a href="index.html"><img src="placeholder.png" alt="Logo"> </a>
         </div>
         <div class="menu">
             <a href="#home">HOME</a>
@@ -273,5 +378,41 @@
             </ul>
         </div>
     </div>
+
+    <!-- Software Requirements Section -->
+    <div class="software-requirements">
+        <h2>Software Requirements</h2>
+        <ul>
+            <li><strong>Processor:</strong> Intel i3 or higher</li>
+            <li><strong>RAM:</strong> 4GB (8GB recommended)</li>
+            <li><strong>GPU:</strong> Optional (YOLOv3-tiny can run on CPU)</li>
+            <li><strong>Storage:</strong> 20GB free disk space</li>
+        </ul>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About</h3>
+                <p>CivicEye is an AI-powered software that detects and monitors traffic violations using CCTV cameras,
+                    ensuring safer roads and improved compliance with traffic rules.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Project By</h3>
+                <a href="https://github.com/Sathwik656" target="_blank">SATHWIK</a>
+                <a href="https://github.com/SHADOW2669" target="_blank">SAKSHITH</a>
+                <a href=" # " target="_blank">DEEKSHITH</a>
+                <a href=" # " target="_blank">PRATYAKSH</a>
+            </div>
+            <div class="footer-section">
+                <h3>Socials</h3>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://github.com" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
