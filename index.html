@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <head>
     <title>Civic Eye</title>
     <style>
         /* General Styles */
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Orbitron:wght@400;700&family=IBM+Plex+Sans:wght@400;700&display=swap');
-
         body {
             margin: 0;
             font-family: 'IBM Plex Sans', sans-serif;
@@ -64,33 +66,40 @@
             background-color: #8300fe;
         }
 
-        html, body {
+        html,
+        body {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            overflow: auto; /* Allow scrolling */
+            overflow: auto;
+            /* Allow scrolling */
         }
 
         #particles-js {
-            position: fixed; /* Keeps particles in place while content scrolls */
+            position: fixed;
+            /* Keeps particles in place while content scrolls */
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
-            z-index: -1; /* Ensures particles stay in the background */
-            background: #0a0a0a; /* Optional dark background */
+            z-index: -1;
+            /* Ensures particles stay in the background */
+            background: #0a0a0a;
+            /* Optional dark background */
         }
 
         .content {
             position: relative;
-            z-index: 1; /* Content stays above particles */
+            z-index: 1;
+            /* Content stays above particles */
             color: white;
             text-align: center;
             padding: 50px;
-            min-height: 100vh; /* Ensure content takes full height */
+            min-height: 100vh;
+            /* Ensure content takes full height */
         }
-        
+
         /* Hero Section Styles */
         .hero {
             text-align: center;
@@ -276,51 +285,108 @@
 
 
         /* Footer Styles */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
         footer {
-            background-color: #222;
-            padding: 30px 20px;
-            text-align: center;
-            margin-top: 50px;
+            background-color: #111;
         }
 
-        .footer-container {
+        .footerContainer {
+            width: 100%;
+            padding: 40px 10px 8px;
+        }
+
+        .socialIcons {
             display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
+            justify-content: center;
         }
 
-        .footer-section {
-            width: 30%;
-            min-width: 200px;
-            margin-bottom: 20px;
-        }
-
-        .footer-section h3 {
-            font-size: 22px;
-            color: #ff5722;
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        .footer-section p {
-            font-size: 16px;
-            color: white;
-            font-family: 'IBM Plex Sans', sans-serif;
-            line-height: 1.5;
-        }
-
-        .footer-section a {
-            display: block;
-            color: #8300fe;
+        .socialIcons a {
             text-decoration: none;
-            font-weight: bold;
-            margin-top: 10px;
-            font-family: 'Roboto Mono', monospace;
+            padding: 10px;
+            background-color: white;
+            margin: 10px;
+            border-radius: 50%;
         }
 
-        .footer-section a:hover {
-            color: #ff5722;
+        .socialIcons a i {
+            font-size: 2em;
+            color: black;
+            opacity: 0, 9;
+        }
+
+        /* Hover affect on social media icon */
+        .socialIcons a:hover {
+            background-color: #111;
+            transition: 0.5s;
+        }
+
+        .socialIcons a:hover i {
+            color: white;
+            transition: 0.5s;
+        }
+
+        .footerNav {
+            margin: 30px 0;
+        }
+
+        .footerNav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+        }
+
+        .footerNav ul li a {
+            color: white;
+            margin: 20px;
+            text-decoration: none;
+            font-size: 1.3em;
+            opacity: 0.7;
+            transition: 0.5s;
+
+        }
+
+        .footerNav ul li a:hover {
+            opacity: 1;
+        }
+
+        .footerBottom {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footerBottom p {
+            color: white;
+        }
+
+        .designer {
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+            margin: 0px 5px;
+        }
+
+        @media (max-width: 700px) {
+            .footerNav ul {
+                flex-direction: column;
+            }
+
+            .footerNav ul li {
+                width: 100%;
+                text-align: center;
+                margin: 10px;
+            }
+
+            .socialIcons a {
+                padding: 8px;
+                margin: 4px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -421,107 +487,106 @@
 
     <!-- Footer Section -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>About</h3>
-                <p>CivicEye is an AI-powered software that detects and monitors traffic violations using CCTV cameras,
-                    ensuring safer roads and improved compliance with traffic rules.</p>
+        <div class="footerContainer">
+            <div class="socialIcons">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
             </div>
-            <div class="footer-section">
-                <h3>Project By</h3>
-                <a href="https://github.com/Sathwik656" target="_blank">SATHWIK</a>
-                <a href="https://github.com/SHADOW2669" target="_blank">SAKSHITH</a>
-                <a href=" # " target="_blank">DEEKSHITH</a>
-                <a href=" # " target="_blank">PRATYAKSH</a>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">our Team</a></li>
+                </ul>
             </div>
-            <div class="footer-section">
-                <h3>Socials</h3>
-                <a href="https://instagram.com" target="_blank">Instagram</a>
-                <a href="https://twitter.com" target="_blank">Twitter</a>
-                <a href="https://github.com" target="_blank">GitHub</a>
-            </div>
+
+        </div>
+        <div class="footerBottom">
+            <p>Copyright &copy;2025 CIVIC EYE</span></p>
         </div>
     </footer>
 
-        <!-- Include Particles.js Config -->
-        <script>
-            particlesJS('particles-js', {
-                particles: {
-                    number: {
-                        value: 80,
-                        density: {
-                            enable: true,
-                            value_area: 800
-                        }
-                    },
-                    color: {
-                        value: "#7BD3EA"
-                    },
-                    shape: {
-                        type: "circle"
-                    },
-                    opacity: {
-                        value: 0.5,
-                        random: true,
-                        anim: {
-                            enable: true,
-                            speed: 1,
-                            opacity_min: 0.1,
-                            sync: false
-                        }
-                    },
-                    size: {
-                        value: 3,
-                        random: true,
-                        anim: {
-                            enable: true,
-                            speed: 4,
-                            size_min: 0.1,
-                            sync: false
-                        }
-                    },
-                    line_linked: {
+    <!-- Include Particles.js Config -->
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
                         enable: true,
-                        distance: 150,
-                        color: "#7BD3EA",
-                        opacity: 0.4,
-                        width: 1
-                    },
-                    move: {
-                        enable: true,
-                        speed: 3,
-                        direction: "none",
-                        random: false,
-                        straight: false,
-                        out_mode: "out",
-                        bounce: false
+                        value_area: 800
                     }
                 },
-                interactivity: {
-                    detect_on: "canvas",
-                    events: {
-                        onhover: {
-                            enable: true,
-                            mode: "repulse"
-                        },
-                        onclick: {
-                            enable: true,
-                            mode: "push"
-                        }
-                    },
-                    modes: {
-                        repulse: {
-                            distance: 100,
-                            duration: 0.4
-                        },
-                        push: {
-                            particles_nb: 4
-                        }
+                color: {
+                    value: "#7BD3EA"
+                },
+                shape: {
+                    type: "circle"
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
                     }
                 },
-                retina_detect: true
-            });
-        </script>
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 4,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#7BD3EA",
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 3,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    }
+                },
+                modes: {
+                    repulse: {
+                        distance: 100,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
 </body>
-
 </html>
