@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,10 +70,20 @@
             max-width: 100px;
             border-radius: 5px;
         }
+
+        .violation-link {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .violation-link:hover {
+            color: #ff5722;
+        }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
     <div class="navbar">
         <div class="logo">CIVIC EYE</div>
         <div class="menu">
@@ -80,25 +92,28 @@
         </div>
     </div>
 
-    <!-- Dashboard Content -->
     <div class="container">
         <h1>Dashboard</h1>
         <table>
             <thead>
                 <tr>
-                    <th>Violation Detected</th>
+                    <th>Date</th>
+                    <th>Time</th>
                     <th>Image of Violation</th>
-                    <th>Date of Violation</th>
                 </tr>
             </thead>
             <tbody>
+                <?php while ($row = $result->fetch_assoc()) { ?>
                 <tr>
-                    <td>No Helmet</td>
-                    <td><img src="violation1.jpg" alt="No Helmet"></td>
-                    <td>16 February 2025</td>
+                    <td><a href="violation_detail.php?id=<?= $row['id'] ?>" class="violation-link"><?= $row['date'] ?></a></td>
+                    <td><?= $row['time'] ?></td>
+                    <td><img src="<?= $row['image_path'] ?>" alt="Violation Image"></td>
                 </tr>
+                <?php } ?>
             </tbody>
         </table>
     </div>
+
+    <?php $conn->close(); ?>
 </body>
 </html>
