@@ -1,337 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Civic Eye</title>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    <meta charset="UTF-8">
+    <title>Civic Eye</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    /* General Styles */
-    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Orbitron:wght@400;700&family=IBM+Plex+Sans:wght@400;700&display=swap');
-    body {
-      margin: 0;
-      font-family: 'IBM Plex Sans', sans-serif;
-      background-color: black;
-      color: white;
-    }
-    
-    /* Navbar Styles */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background-color: #222;
-    }
-    .navbar-left {
-      display: flex;
-      align-items: center;
-    }
-    .navbar-left img {
-      width: 65px;
-      height: 50px;
-      border-radius: 5px;
-      margin-right: 15px;
-    }
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
-      font-family: 'Roboto Mono', monospace;
-    }
-    .navbar a:hover {
-      color: #ff5722;
-    }
-    .login-btn {
-      padding: 10px 20px;
-      background-color: #8300fe;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      text-decoration: none;
-      font-family: 'Orbitron', sans-serif;
-    }
-    .login-btn:hover {
-      background-color: #8300fe;
-    }
-    
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto; /* Allow scrolling */
-    }
-    
-    #particles-js {
-      position: fixed;
-      /* Keeps particles in place while content scrolls */
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      background: #0a0a0a;
-    }
-    
-    .content {
-      position: relative;
-      z-index: 1;
-      color: white;
-      text-align: center;
-      padding: 50px;
-      min-height: 100vh;
-    }
-    
-    /* Hero Section Styles */
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-    }
-    .hero h1 {
-      font-size: 72px;
-      margin: 0;
-      font-family: 'Orbitron', sans-serif;
-    }
-    .hero p {
-      font-size: 24px;
-      margin: 20px 0;
-      font-family: 'IBM Plex Sans', sans-serif;
-    }
-    .hero .info {
-      margin-top: 40px;
-      font-size: 18px;
-      color: rgb(255, 255, 255);
-      font-family: 'Roboto Mono', monospace;
-    }
-    
-    /* Tracks Section Styles */
-    .tracks {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      padding: 50px;
-      background: linear-gradient(to bottom, #333, #000);
-    }
-    .tracks .track {
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      font-size: 20px;
-    }
-    .track.orange {
-      background-color: #ff5722;
-      color: white;
-    }
-    .track.purple {
-      background-color: #9c27b0;
-      color: white;
-    }
-    
-    /* Prepare Section Styles */
-    .prepare {
-      text-align: center;
-      padding: 50px 20px;
-    }
-    .prepare h2 {
-      font-size: 32px;
-      color: #9c27b0;
-      font-family: 'Orbitron', sans-serif;
-    }
-    
-    /* Services Section Styles */
-    .services {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      padding: 50px;
-      flex-wrap: wrap;
-    }
-    .service-box {
-      width: 45%;
-      padding: 30px;
-      border: 2px solid white;
-      border-radius: 10px;
-      text-align: left;
-      background-color: rgba(255, 255, 255, 0.05);
-    }
-    .service-box h3 {
-      font-size: 26px;
-      margin-bottom: 20px;
-      font-family: 'Orbitron', sans-serif;
-      color: #ff5722;
-      text-transform: uppercase;
-      text-align: center;
-      letter-spacing: 1px;
-    }
-    .service-box ul {
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-    }
-    .service-box ul li {
-      font-size: 18px;
-      color: white;
-      margin-bottom: 20px;
-      padding: 15px;
-      font-family: 'IBM Plex Sans', sans-serif;
-      line-height: 1.6;
-      border-left: 4px solid #ff5722;
-      padding-left: 15px;
-      background-color: rgba(255, 255, 255, 0.07);
-      border-radius: 5px;
-    }
-    .service-box ul li strong {
-      color: #ff5722;
-    }
-    @media (max-width: 768px) {
-      .services {
-        flex-direction: column;
-        align-items: center;
-      }
-      .service-box {
-        width: 90%;
-      }
-    }
-    
-    /* Software Requirements Section Styles */
-    .software-requirements {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 30px;
-      margin: 50px auto;
-      width: 60%;
-      border: 2px solid #ff5722;
-      border-radius: 10px;
-      text-align: left;
-      font-family: 'IBM Plex Sans', sans-serif;
-    }
-    .software-requirements h2 {
-      font-size: 28px;
-      color: #ff5722;
-      font-family: 'Orbitron', sans-serif;
-      text-align: center;
-      text-transform: uppercase;
-    }
-    .software-requirements ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    .software-requirements ul li {
-      font-size: 18px;
-      padding: 10px;
-      border-left: 4px solid #ff5722;
-      background-color: rgba(255, 255, 255, 0.07);
-      margin-bottom: 10px;
-      border-radius: 5px;
-      padding-left: 15px;
-      line-height: 1.6;
-    }
-    @media (max-width: 768px) {
-      .software-requirements {
-        width: 90%;
-      }
-    }
-    
-    /* Footer Styles */
-    * {
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-    }
-    footer {
-      background-color: #111;
-    }
-    .footerContainer {
-      width: 100%;
-      padding: 40px 10px 8px;
-    }
-    .socialIcons {
-      display: flex;
-      justify-content: center;
-    }
-    .socialIcons a {
-      text-decoration: none;
-      padding: 10px;
-      background-color: white;
-      margin: 10px;
-      border-radius: 50%;
-    }
-    .socialIcons a i {
-      font-size: 2em;
-      color: black;
-    }
-    .socialIcons a:hover {
-      background-color: #111;
-      transition: 0.5s;
-    }
-    .socialIcons a:hover i {
-      color: white;
-      transition: 0.5s;
-    }
-    .footerNav {
-      margin: 30px 0;
-    }
-    .footerNav ul {
-      display: flex;
-      justify-content: center;
-      list-style-type: none;
-    }
-    .footerNav ul li a {
-      color: white;
-      margin: 20px;
-      text-decoration: none;
-      font-size: 1.3em;
-      opacity: 0.7;
-      transition: 0.5s;
-    }
-    .footerNav ul li a:hover {
-      opacity: 1;
-    }
-    .footerBottom {
-      background-color: #000;
-      padding: 20px;
-      text-align: center;
-    }
-    .footerBottom p {
-      color: white;
-    }
-    .designer {
-      opacity: 0.7;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 400;
-      margin: 0px 5px;
-    }
-    @media (max-width: 700px) {
-      .footerNav ul {
-        flex-direction: column;
-      }
-      .footerNav ul li {
-        width: 100%;
-        text-align: center;
-        margin: 10px;
-      }
-      .socialIcons a {
-        padding: 8px;
-        margin: 4px;
-      }
-    }
-    @media (max-width: 768px) {
-      .footer-container {
-        flex-direction: column;
-        text-align: center;
-      }
-      .footer-section {
-        width: 100%;
-      }
-    }
-    
-    /* Modal Styles */
+    <style>
+        /* General Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Orbitron:wght@400;700&family=IBM+Plex+Sans:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'IBM Plex Sans', sans-serif;
+            background-color: black;
+            color: white;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #222;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-left img {
+            width: 65px;
+            height: 50px;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .navbar a:hover {
+            color: #ff5722;
+        }
+
+        .login-btn {
+            padding: 10px 20px;
+            background-color: #8300fe;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .login-btn:hover {
+            background-color: #8300fe;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            /* Allow scrolling */
+        }
+
+        #particles-js {
+            position: fixed;
+            /* Keeps particles in place while content scrolls */
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: #0a0a0a;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            padding: 50px;
+            min-height: 100vh;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin: 20px 0;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        .hero .info {
+            margin-top: 40px;
+            font-size: 18px;
+            color: rgb(255, 255, 255);
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        /* Tracks Section Styles */
+        .tracks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 50px;
+            background: linear-gradient(to bottom, #333, #000);
+        }
+
+        .tracks .track {
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .track.orange {
+            background-color: #ff5722;
+            color: white;
+        }
+
+        .track.purple {
+            background-color: #9c27b0;
+            color: white;
+        }
+
+        /* Prepare Section Styles */
+        .prepare {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .prepare h2 {
+            font-size: 32px;
+            color: #9c27b0;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Services Section Styles */
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 50px;
+            flex-wrap: wrap;
+        }
+
+        .service-box {
+            width: 45%;
+            padding: 30px;
+            border: 2px solid white;
+            border-radius: 10px;
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .service-box h3 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            font-family: 'Orbitron', sans-serif;
+            color: #ff5722;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .service-box ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .service-box ul li {
+            font-size: 18px;
+            color: white;
+            margin-bottom: 20px;
+            padding: 15px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            line-height: 1.6;
+            border-left: 4px solid #ff5722;
+            padding-left: 15px;
+            background-color: rgba(255, 255, 255, 0.07);
+            border-radius: 5px;
+        }
+
+        .service-box ul li strong {
+            color: #ff5722;
+        }
+
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-box {
+                width: 90%;
+            }
+        }
+
+        /* Software Requirements Section Styles */
+        .software-requirements {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            margin: 50px auto;
+            width: 60%;
+            border: 2px solid #ff5722;
+            border-radius: 10px;
+            text-align: left;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        .software-requirements h2 {
+            font-size: 28px;
+            color: #ff5722;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .software-requirements ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .software-requirements ul li {
+            font-size: 18px;
+            padding: 10px;
+            border-left: 4px solid #ff5722;
+            background-color: rgba(255, 255, 255, 0.07);
+            margin-bottom: 10px;
+            border-radius: 5px;
+            padding-left: 15px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .software-requirements {
+                width: 90%;
+            }
+        }
+
+        /* Footer Styles */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        footer {
+            background-color: #111;
+        }
+
+        .footerContainer {
+            width: 100%;
+            padding: 40px 10px 8px;
+        }
+
+        .socialIcons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .socialIcons a {
+            text-decoration: none;
+            padding: 10px;
+            background-color: white;
+            margin: 10px;
+            border-radius: 50%;
+        }
+
+        .socialIcons a i {
+            font-size: 2em;
+            color: black;
+        }
+
+        .socialIcons a:hover {
+            background-color: #111;
+            transition: 0.5s;
+        }
+
+        .socialIcons a:hover i {
+            color: white;
+            transition: 0.5s;
+        }
+
+        .footerNav {
+            margin: 30px 0;
+        }
+
+        .footerNav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+        }
+
+        .footerNav ul li a {
+            color: white;
+            margin: 20px;
+            text-decoration: none;
+            font-size: 1.3em;
+            opacity: 0.7;
+            transition: 0.5s;
+        }
+
+        .footerNav ul li a:hover {
+            opacity: 1;
+        }
+
+        .footerBottom {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footerBottom p {
+            color: white;
+        }
+
+        .designer {
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+            margin: 0px 5px;
+        }
+
+        @media (max-width: 700px) {
+            .footerNav ul {
+                flex-direction: column;
+            }
+
+            .footerNav ul li {
+                width: 100%;
+                text-align: center;
+                margin: 10px;
+            }
+
+            .socialIcons a {
+                padding: 8px;
+                margin: 4px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-section {
+                width: 100%;
+            }
+        }
+
+        /* Modal Styles (used by both login & dashboard prompt modals) */
     .modal {
       display: none;
       position: fixed;
@@ -361,6 +408,11 @@
       color: #ff5722;
       font-family: 'Orbitron', sans-serif;
     }
+    .modal-content p {
+      font-size: 16px;
+      margin: 20px 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
     .modal-content input {
       width: 90%;
       padding: 10px;
@@ -386,211 +438,246 @@
       color: white;
       cursor: pointer;
     }
-  </style>
+    </style>
 </head>
+
 <body>
-  <!-- Navbar -->
-  <div class="navbar">
-    <div class="navbar-left">
-      <a href="index.html"><img src="placeholder.png" alt="Logo"></a>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-left">
+            <a href="index.html"><img src="placeholder.png" alt="Logo"></a>
+        </div>
+        <div class="menu">
+            <a href="#home">HOME</a>
+            <a href="dashboard.php" id="dashboardLink">DASHBOARD</a>
+        </div>
+        <div class="auth-buttons">
+            <button class="login-btn" onclick="openModal()">LOGIN</button>
+        </div>
     </div>
-    <div class="menu">
-      <a href="#home">HOME</a>
-      <a href="dashboard.php">DASHBOARD</a>
+
+    <div id="particles-js"></div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Civic Eye</h1>
+        <p>Introduction</p>
+        <p class="info">
+            CivicEye is an innovative software designed to detect and monitor traffic violations using
+            home-based CCTV cameras. It empowers users to identify common traffic rule violations, such as riding
+            without a helmet. The software integrates seamlessly with user-provided CCTV systems, processes violations
+            locally, and sends critical data and evidence to a centralized database. Users can access detailed violation
+            logs and
+            reports via a DASHBOARD.
+        </p>
     </div>
-    <div class="auth-buttons">
-      <button class="login-btn" onclick="openModal()">LOGIN</button>
+
+    <!-- Prepare Section -->
+    <div class="prepare">
+        <h2>MORE INFO</h2>
     </div>
-  </div>
-  
-  <div id="particles-js"></div>
-  
-  <!-- Hero Section -->
-  <div class="hero">
-    <h1>Civic Eye</h1>
-    <p>Introduction</p>
-    <p class="info">
-      CivicEye is an innovative software designed to detect and monitor traffic violations using
-      home-based CCTV cameras. It empowers users to identify common traffic rule violations, such as riding
-      without a helmet. The software integrates seamlessly with user-provided CCTV systems, processes violations
-      locally, and sends critical data and evidence to a centralized database. Users can access detailed violation logs and
-      reports via a DASHBOARD.
-    </p>
-  </div>
-  
-  <!-- Prepare Section -->
-  <div class="prepare">
-    <h2>MORE INFO</h2>
-  </div>
-  
-  <!-- Services Section -->
-  <div class="services">
-    <div class="service-box">
-      <h3>Objectives</h3>
-      <ul>
-        <li><strong>Traffic Violation Detection:</strong> Leverage AI-powered object detection (YOLOv3) to identify violations like "no helmet," "triple riding," and more.</li>
-        <li><strong>Automated Data Reporting:</strong> Send violation data (images, timestamps, types) from the client’s system to a centralized database.</li>
-        <li><strong>Centralized Monitoring:</strong> Allow users to view and manage detected violations via a web dashboard.</li>
-        <li><strong>Privacy and Efficiency:</strong> Enable local processing on the client’s machine, ensuring data privacy and reducing server costs.</li>
-        <li><strong>Scalability:</strong> Create a robust, user-friendly software that can be downloaded and run across different devices.</li>
-      </ul>
+
+    <!-- Services Section -->
+    <div class="services">
+        <div class="service-box">
+            <h3>Objectives</h3>
+            <ul>
+                <li><strong>Traffic Violation Detection:</strong> Leverage AI-powered object detection (YOLOv3) to
+                    identify violations like "no helmet," "triple riding," and more.</li>
+                <li><strong>Automated Data Reporting:</strong> Send violation data (images, timestamps, types) from the
+                    client’s system to a centralized database.</li>
+                <li><strong>Centralized Monitoring:</strong> Allow users to view and manage detected violations via a
+                    web dashboard.</li>
+                <li><strong>Privacy and Efficiency:</strong> Enable local processing on the client’s machine, ensuring
+                    data privacy and reducing server costs.</li>
+                <li><strong>Scalability:</strong> Create a robust, user-friendly software that can be downloaded and run
+                    across different devices.</li>
+            </ul>
+        </div>
+        <div class="service-box">
+            <h3>KEY FEATURES</h3>
+            <ul>
+                <li><strong>Real-Time Violation Detection:</strong> Automatically detect and record traffic violations
+                    using the YOLOv3 object detection model.</li>
+                <li><strong>Local Processing:</strong> Run the detection software locally on the client’s machine,
+                    minimizing data transmission.</li>
+                <li><strong>Automated Reporting:</strong> Send violation evidence (photos and metadata) to a centralized
+                    database for storage and review.</li>
+                <li><strong>Web Dashboard:</strong> Provide a user-friendly website for viewing, searching, and
+                    filtering violations.</li>
+                <li><strong>Customizable Configuration:</strong> Users can easily configure the CCTV feed (RTSP URL) and
+                    software settings.</li>
+            </ul>
+        </div>
     </div>
-    <div class="service-box">
-      <h3>KEY FEATURES</h3>
-      <ul>
-        <li><strong>Real-Time Violation Detection:</strong> Automatically detect and record traffic violations using the YOLOv3 object detection model.</li>
-        <li><strong>Local Processing:</strong> Run the detection software locally on the client’s machine, minimizing data transmission.</li>
-        <li><strong>Automated Reporting:</strong> Send violation evidence (photos and metadata) to a centralized database for storage and review.</li>
-        <li><strong>Web Dashboard:</strong> Provide a user-friendly website for viewing, searching, and filtering violations.</li>
-        <li><strong>Customizable Configuration:</strong> Users can easily configure the CCTV feed (RTSP URL) and software settings.</li>
-      </ul>
-    </div>
-  </div>
-  
-  <!-- Software Requirements Section -->
-  <div class="software-requirements">
-    <h2>SYSTEM REQUIREMENTS</h2>
-    <ul>
-      <li><strong>Processor:</strong> Intel i3 or higher</li>
-      <li><strong>RAM:</strong> 4GB (8GB recommended)</li>
-      <li><strong>GPU:</strong> Optional (YOLOv3-tiny can run on CPU)</li>
-      <li><strong>Storage:</strong> 20GB free disk space</li>
-    </ul>
-  </div>
-  
-  <!-- Footer Section -->
-  <footer>
-    <div class="footerContainer">
-      <div class="socialIcons">
-        <a href=""><i class="fa-brands fa-facebook"></i></a>
-        <a href=""><i class="fa-brands fa-instagram"></i></a>
-        <a href=""><i class="fa-brands fa-twitter"></i></a>
-        <a href=""><i class="fa-brands fa-google-plus"></i></a>
-        <a href=""><i class="fa-brands fa-youtube"></i></a>
-      </div>
-      <div class="footerNav">
+
+    <!-- Software Requirements Section -->
+    <div class="software-requirements">
+        <h2>SYSTEM REQUIREMENTS</h2>
         <ul>
-          <li><a href="">About</a></li>
-          <li><a href="">Contact Us</a></li>
-          <li><a href="">Our Team</a></li>
+            <li><strong>Processor:</strong> Intel i3 or higher</li>
+            <li><strong>RAM:</strong> 4GB (8GB recommended)</li>
+            <li><strong>GPU:</strong> Optional (YOLOv3-tiny can run on CPU)</li>
+            <li><strong>Storage:</strong> 20GB free disk space</li>
         </ul>
-      </div>
     </div>
-    <div class="footerBottom">
-      <p>Copyright &copy;2025 CIVIC EYE</p>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footerBottom">
+            <p>Copyright &copy;2025 CIVIC EYE</p>
+        </div>
+    </footer>
+
+    <!-- Login Popup Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Login</h2>
+            <input type="text" placeholder="Username" id="username">
+            <input type="password" placeholder="Password" id="password">
+            <button onclick="login()">Login</button>
+            <p>Don't have an account? <a href="signup.html" style="color: #ff5722; text-decoration: none;">Sign Up</a>
+            </p>
+        </div>
     </div>
-  </footer>
-  
-  <!-- Login Popup Modal -->
-  <div id="loginModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal()">&times;</span>
-      <h2>Login</h2>
-      <input type="text" placeholder="Username" id="username">
-      <input type="password" placeholder="Password" id="password">
-      <button onclick="login()">Login</button>
-      <p>Don't have an account? <a href="signup.html" style="color: #ff5722; text-decoration: none;">Sign Up</a></p>
-    </div>
-  </div>
-  
-  <script>
-    function openModal() {
-      document.getElementById("loginModal").style.display = "flex";
-    }
-    function closeModal() {
-      document.getElementById("loginModal").style.display = "none";
-    }
-    function login() {
-      let username = document.getElementById("username").value;
-      let password = document.getElementById("password").value;
-      
-      if (username === "admin" && password === "password123") {
-        alert("Login Successful!");
-        closeModal();
-      } else {
-        alert("Invalid Credentials! Try again.");
-      }
-    }
-  </script>
-  
-  <!-- Particles.js Configuration -->
-  <script>
-    particlesJS('particles-js', {
-      particles: {
-        number: {
-          value: 80,
-          density: {
-            enable: true,
-            value_area: 800
-          }
-        },
-        color: {
-          value: "#7BD3EA"
-        },
-        shape: {
-          type: "circle"
-        },
-        opacity: {
-          value: 0.5,
-          random: true,
-          anim: {
-            enable: true,
-            speed: 1,
-            opacity_min: 0.1,
-            sync: false
-          }
-        },
-        size: {
-          value: 3,
-          random: true,
-          anim: {
-            enable: true,
-            speed: 4,
-            size_min: 0.1,
-            sync: false
-          }
-        },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: "#7BD3EA",
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 3,
-          direction: "none",
-          random: false,
-          straight: false,
-          out_mode: "out",
-          bounce: false
+
+    <script>
+        function openModal() {
+            document.getElementById("loginModal").style.display = "flex";
         }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: {
-            enable: true,
-            mode: "repulse"
-          },
-          onclick: {
-            enable: true,
-            mode: "push"
-          }
-        },
-        modes: {
-          repulse: {
-            distance: 100,
-            duration: 0.4
-          },
-          push: {
-            particles_nb: 4
-          }
+        function closeModal() {
+            document.getElementById("loginModal").style.display = "none";
         }
-      },
-      retina_detect: true
-    });
-  </script>
+        function login() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            if (username === "admin" && password === "password123") {
+                alert("Login Successful!");
+                closeModal();
+            } else {
+                alert("Invalid Credentials! Try again.");
+            }
+        }
+    </script>
+
+    <!-- Dashboard Prompt Modal -->
+    <div id="dashboardPromptModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeDashboardPrompt()">&times;</span>
+            <h2>Please Login</h2>
+            <p>Please login to access the Dashboard.</p>
+            <button onclick="switchToLogin()">Login Now</button>
+        </div>
+    </div>
+
+    <script>
+        // Open dashboard prompt modal
+        function openDashboardPrompt() {
+            document.getElementById("dashboardPromptModal").style.display = "flex";
+        }
+
+        // Close dashboard prompt modal
+        function closeDashboardPrompt() {
+            document.getElementById("dashboardPromptModal").style.display = "none";
+        }
+
+        // Switch from dashboard prompt to login modal
+        function switchToLogin() {
+            closeDashboardPrompt();
+            openModal();
+        }
+
+        // Intercept Dashboard link clicks: if not logged in, open the dashboard prompt modal
+        document.getElementById("dashboardLink").addEventListener("click", function (e) {
+            if (!localStorage.getItem("loggedIn")) {
+                e.preventDefault();
+                openDashboardPrompt();
+            }
+        });
+
+    </script>
+
+    <!-- Particles.js Configuration -->
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#7BD3EA"
+                },
+                shape: {
+                    type: "circle"
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 4,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#7BD3EA",
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 3,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    }
+                },
+                modes: {
+                    repulse: {
+                        distance: 100,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
 </body>
+
 </html>
