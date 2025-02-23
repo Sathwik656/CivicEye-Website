@@ -1,4 +1,19 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "civiceye";
 
+// Connect to MySQL
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch violation data
+$sql = "SELECT * FROM violations ORDER BY date DESC, time DESC";
+$result = $conn->query($sql);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
