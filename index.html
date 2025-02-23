@@ -537,7 +537,7 @@
             <input type="text" placeholder="Username" id="username">
             <input type="password" placeholder="Password" id="password">
             <button onclick="login()">Login</button>
-            <p>Don't have an account? <a href="signup.html" style="color: #ff5722; text-decoration: none;">Sign Up</a>
+            <p>Don't have an account? <a onclick="openSignupModal()" style="color: #ff5722; text-decoration: none;">Sign Up</a>
             </p>
         </div>
     </div>
@@ -598,7 +598,36 @@
         });
 
     </script>
-    
+
+    <!-- Signup Popup Modal -->
+<div id="signupModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeSignupModal()">&times;</span>
+        <h2>Signup</h2>
+        <form action="signup.php" method="POST">
+            <input type="text" name="fullname" placeholder="Full Name" required>
+            <input type="text" name="phone" placeholder="Phone Number" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="text" name="city" placeholder="City" required>
+            <input type="text" name="pincode" placeholder="Pin Code" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Signup</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Open signup modal
+function openSignupModal() {
+  document.getElementById("signupModal").style.display = "flex";
+}
+
+// Close signup modal
+function closeSignupModal() {
+  document.getElementById("signupModal").style.display = "none";
+}
+
+</script>
     <!-- Particles.js Configuration -->
     <script>
         particlesJS('particles-js', {
