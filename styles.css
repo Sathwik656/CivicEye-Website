@@ -1,6 +1,5 @@
 /* General Styles */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Orbitron:wght@400;700&family=IBM+Plex+Sans:wght@400;700&display=swap');
-
 body {
     margin: 0;
     font-family: 'IBM Plex Sans', sans-serif;
@@ -271,83 +270,94 @@ footer {
 
 /* Modal Styles (used by both login & dashboard prompt modals) */
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.7);
-  justify-content: center;
-  align-items: center;
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
 }
+
 .modal-content {
-  background-color: #222;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #444;
-  width: 90%;
-  max-width: 400px;
-  border-radius: 5px;
-  position: relative;
-  text-align: center;
+    background-color: #222;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #444;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
 }
+
 .modal-content h2 {
-  margin-top: 0;
-  color: #ff5722;
-  font-family: 'Orbitron', sans-serif;
+    margin-top: 0;
+    color: #ff5722;
+    font-family: 'Orbitron', sans-serif;
 }
+
 .modal-content p {
-  font-size: 16px;
-  margin: 20px 0;
-  font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    margin: 20px 0;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
+
 .modal-content input {
-  width: 90%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
+
 .modal-content button {
-  padding: 10px 20px;
-  background-color: #8300fe;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: 'Orbitron', sans-serif;
+    padding: 10px 20px;
+    background-color: #8300fe;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
 }
+
 .close-btn {
-  position: absolute;
-  right: 10px;
-  top: 5px;
-  font-size: 28px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
 }
 
 /* Responsive Media Queries */
 @media (max-width: 768px) {
+
     /* Navbar: stack items vertically */
     .navbar {
         flex-direction: column;
         align-items: flex-start;
     }
+
     .navbar a {
         margin: 10px 0;
     }
+
     /* Services: change layout to single column */
     .services {
         flex-direction: column;
         align-items: center;
     }
+
     .service-box {
         width: 90%;
     }
+
     /* Software Requirements: adjust width */
     .software-requirements {
         width: 90%;
@@ -355,13 +365,16 @@ footer {
 }
 
 @media (max-width: 600px) {
+
     /* Adjust hero section text sizes for small screens */
     .hero h1 {
         font-size: 48px;
     }
+
     .hero p {
         font-size: 18px;
     }
+
     /* Adjust navbar image size */
     .navbar-left img {
         width: 50px;
