@@ -12,28 +12,23 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 1px;
     background-color: #222;
-    size-adjust: auto;
-}
-
-.navbar-left {
-    display: flex;
-    align-items: center;
+    height: auto;
 }
 
 .navbar-left img {
     width: 100px;
     height: 100px;
-
 }
 
 .navbar a {
     color: white;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 3 8px;
     font-weight: bold;
     font-family: 'Roboto Mono', monospace;
+    padding: 5px 10px; /* Reduces space */
 }
 
 .navbar a:hover {
@@ -41,14 +36,13 @@ body {
 }
 
 .login-btn {
-    padding: 10px 20px;
+    padding: 8px 16px;
     background-color: #8300fe;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    text-decoration: none;
     font-family: 'Orbitron', sans-serif;
 }
 
